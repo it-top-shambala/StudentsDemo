@@ -1,0 +1,21 @@
+﻿@{
+    var student = Model as Student;
+    ViewData["Title"] = $"{student?.LastName} {student?.FirstName}";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="display-1">@ViewData["Title"]</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <p>Фамилия: @student?.LastName</p>
+            <p>Имя: @student?.FirstName</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Список студентов";
+    var students = Model as List<Student>;
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="display-1">@ViewData["Title"]</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Фамилия</th>
+                        <th scope="col">Имя</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                @{
+                    foreach (var student in students)
+                    {
+                        <tr>
+                            <th scope="row">@student.Id</th>
+                            <td>@student.LastName</td>
+                            <td>@student.FirstName</td>
+                            <td>
+                                <a type="button" class="btn btn-info" href="/student/@student.Id">Подробнее</a>
+                            </td>
+                        </tr>
+                    }
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
